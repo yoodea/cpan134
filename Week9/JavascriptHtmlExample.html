@@ -1,0 +1,40 @@
+<html>
+
+  <head>
+
+
+
+  </head>
+
+  <body>
+
+    <button onclick="addElement()">Add Paragraph</button>
+
+    <button onclick="removeElements()">Remove All Paragraphs</button>
+
+    <div id = "container"></div>
+
+  </body>
+
+  <script>
+
+    function addElement() {
+
+      let newPara = document.createElement("p");
+
+      newPara.textContent = "A new paragraph";
+
+      document.getElementById("container").appendChild(newPara);
+
+    }
+
+    function removeElements() {
+
+      let container = document.getElementById("container");
+
+      container.innerHTML = ""; 
+    }
+
+  </script>
+
+</html>
