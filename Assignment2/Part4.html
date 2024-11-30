@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Box Model</title>
+    <style>
+        #myBox {
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            border: 5px solid black;
+            margin: 10px;
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="myBox">This is a box</div>
+
+    <script>
+        function getRandomColor() {
+            let letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        let box = document.getElementById("myBox");
+
+        box.addEventListener("click", function() {
+            this.style.backgroundColor = getRandomColor();
+        });
+
+        box.addEventListener("mouseover", function() {
+            this.style.borderColor = getRandomColor();
+        });
+
+        box.addEventListener("mouseout", function() {
+            this.style.borderColor = "black";
+        });
+    </script>
+</body>
+</html>

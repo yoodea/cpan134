@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manipulating the DOM</title>
+</head>
+<body>
+    <ul id="myList">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+
+    <script>
+        window.onload = function() {
+            let ul = document.getElementById("myList");
+            let li = document.createElement("li");
+            li.textContent = "Fourth item";
+            ul.appendChild(li);
+        };
+
+        function getRandomString(length) {
+            let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+
+        document.getElementById("myList").addEventListener("click", function(event) {
+            if (event.target && event.target.nodeName == "LI") {
+                event.target.textContent = getRandomString(10);
+            }
+        });
+    </script>
+</body>
+</html>
